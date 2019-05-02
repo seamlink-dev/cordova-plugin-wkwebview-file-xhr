@@ -336,6 +336,8 @@ NS_ASSUME_NONNULL_BEGIN
     
     NSURL *url = [NSURL URLWithString:urlString];
     
+    NSLog(@"NativeXHR: URL requested: %@", urlString);
+ 
     if (![url.scheme.lowercaseString isEqualToString:@"http"] && ![url.scheme.lowercaseString isEqualToString:@"https"]) {
         NSString *msg = [NSString stringWithFormat:@"NativeXHR: Invalid url scheme '%@';  only http and https are supported by NativeXHR", urlString];
         return sendResult( @{ @"error" : msg});
